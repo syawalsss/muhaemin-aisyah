@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-color: #0c0f24;
+  background-image: 
+    linear-gradient(135deg, rgba(220, 164, 59, 0.03) 25%, transparent 25%) -25px 0,
+    linear-gradient(225deg, rgba(220, 164, 59, 0.03) 25%, transparent 25%) -25px 0,
+    linear-gradient(45deg, rgba(220, 164, 59, 0.03) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(220, 164, 59, 0.03) 25%, transparent 25%);
+  background-size: 50px 50px;
+  overflow-x: hidden;
+}
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c0f24;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+}
+
+.preloader-initials {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #dca43b;
+  text-shadow: 0 0 20px rgba(220, 164, 59, 0.3);
+  animation: pulseGlow 1.8s ease-in-out infinite;
+}
+
+.preloader-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #dca43b, transparent);
+  margin: 10px auto 0 auto;
+  animation: lineExpand 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(0.93);
+    text-shadow: 0 0 10px rgba(220, 164, 59, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 35px rgba(220, 164, 59, 0.7);
+  }
+}
+
+@keyframes lineExpand {
+  0%, 100% {
+    width: 40px;
+    opacity: 0.3;
+  }
+  50% {
+    width: 110px;
+    opacity: 1;
+  }
+}
+.main-invitation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.text-box {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.cultural-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.diamond-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #dca43b;
+  transform: rotate(45deg);
+}
+
+.diamond-dot.large {
+  width: 10px;
+  height: 10px;
+}
+
+.greeting {
+  font-family: 'Great Vibes', cursive;
+  color: #dca43b;
+  font-size: 2.2rem;
+  margin: 0 0 15px 0;
+}
+
+.invitation-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.wedding-title {
+  margin: 25px auto;
+  padding: 0 15px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.groom-name,
+.bride-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.and-symbol {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: #dca43b;
+  margin: 8px 0;
+  line-height: 1;
+}
+
+@media screen and (min-width: 481px) {
+  .groom-name,
+  .bride-name {
+    font-size: 2rem;
+  }
+  .and-symbol {
+    font-size: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .groom-name,
+  .bride-name {
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+  }
+  .and-symbol {
+    font-size: 3.5rem;
+  }
+}
+
+.line-separator {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #dca43b, transparent);
+  margin: 20px auto;
+}
+
+.quote {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #d0d4ef;
+  margin: 15px 0;
+}
+
+.surah {
+  font-size: 0.85rem;
+  color: #dca43b;
+  font-weight: 500;
+}
+
+.invitation-section {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(26, 32, 71, 0.7);
+  border: 1px solid rgba(220, 164, 59, 0.2);
+  border-radius: 24px;
+  padding: 30px 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.photo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.invitation-photo {
+  width: 85%;
+  max-width: 280px;
+  border-radius: 150px 150px 20px 20px;
+  border: 4px solid #dca43b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.profiles-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-card {
+  padding: 10px;
+}
+
+.name.gold {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #dca43b;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+}
+
+.desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0 0 15px 0;
+}
+
+.instagram-tag {
+  display: inline-block;
+  padding: 4px 16px;
+  border: 1px solid #dca43b;
+  color: #dca43b;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.cultural-center-icon {
+  color: #dca43b;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.events-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section-card,
+.moment-section,
+.rsvp-section,
+.gift-section {
+  width: 100%;
+  max-width: 450px;
+  background-color: rgba(26, 32, 71, 0.7);
+  border: 1px solid rgba(220, 164, 59, 0.15);
+  border-radius: 20px;
+  padding: 30px 20px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-button {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: transparent;
+  border: 1px solid #dca43b;
+  color: #dca43b;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.calendar-button:hover {
+  background-color: #dca43b;
+  color: #0c0f24;
+  transform: translateY(-2px);
+}
+
+.copy-address-button {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid #dca43b;
+  color: #dca43b;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.copy-address-button:hover {
+  background-color: #dca43b;
+  color: #0c0f24;
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 480px) {
+  .map-button, 
+  .copy-address-button {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px auto 0 auto;
+  }
+}
+
+.heading-event {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #dca43b;
+  margin: 0 0 20px 0;
+  font-weight: normal;
+}
+
+.event-detail {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.location-badge {
+  display: inline-block;
+  background-color: rgba(220, 164, 59, 0.15);
+  color: #dca43b;
+  padding: 2px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin: 10px 0;
+  font-size: 0.85rem;
+  border: 1px solid rgba(220, 164, 59, 0.3);
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.countdown div {
+  background-color: rgba(12, 15, 36, 0.6);
+  border: 1px solid rgba(220, 164, 59, 0.3);
+  border-radius: 12px;
+  padding: 10px;
+  width: 60px;
+}
+
+.countdown span {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #dca43b;
+  font-family: 'Playfair Display', serif;
+}
+
+.countdown small {
+  font-size: 0.7rem;
+  color: #a0a4c2;
+}
+
+.map {
+  width: 100%;
+  height: 220px;
+  border: 1px solid rgba(220, 164, 59, 0.3);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.map-button,
+#rsvpForm button,
+#downloadQR {
+  display: inline-block;
+  width: 100%;
+  background: linear-gradient(135deg, #dca43b, #b88729);
+  color: #0c0f24;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(220, 164, 59, 0.2);
+  transition: all 0.3s ease;
+}
+
+.map-button:hover,
+#rsvpForm button:hover,
+#downloadQR:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(220, 164, 59, 0.4);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(220, 164, 59, 0.2);
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#rsvpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#rsvpForm input,
+#rsvpForm textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(220, 164, 59, 0.3);
+  background-color: rgba(12, 15, 36, 0.5);
+  color: #ffffff;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+#rsvpForm input::placeholder,
+#rsvpForm textarea::placeholder {
+  color: #707597;
+}
+
+#rsvpForm input:focus,
+#rsvpForm textarea:focus {
+  border-color: #dca43b;
+  outline: none;
+}
+
+.gift-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.gift-item {
+  width: 100%;
+  background-color: rgba(12, 15, 36, 0.4);
+  border: 1px solid rgba(220, 164, 59, 0.2);
+  border-radius: 12px;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+
+.bank-logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+.bank-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+}
+
+.account-number {
+  font-size: 1.1rem;
+  color: #dca43b;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  letter-spacing: 1px;
+}
+
+.gift-item button {
+  background: transparent;
+  border: 1px solid #dca43b;
+  color: #dca43b;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gift-item button:hover {
+  background-color: #dca43b;
+  color: #0c0f24;
+}
+
+.qr-section {
+  margin-top: 25px;
+  border-top: 1px dashed rgba(220, 164, 59, 0.2);
+  padding-top: 25px;
+}
+
+.qr-title {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+}
+
+.qr-code {
+  width: 160px;
+  height: 160px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #dca43b;
+  margin-bottom: 15px;
+}
+
+.closing-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+  text-align: center;
+}
+
+.closing-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin: 0 0 15px 0;
+}
+
+.closing-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #dca43b;
+  margin-top: 20px;
+}
+
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.8rem;
+  color: #707597;
+}
+
+.site-footer span {
+  color: #dca43b;
+  font-weight: 600;
+}
+
+#soundToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dca43b;
+  color: #0c0f24;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+@media screen and (min-width: 769px) {
+  .main-invitation {
+    padding: 60px 20px;
+  }
+  
+  .invitation-section {
+    max-width: 650px;
+    padding: 40px;
+  }
+  
+  .profiles-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .cultural-center-icon {
+    transform: rotate(90deg);
+  }
+  
+  .section-card,
+  .moment-section,
+  .rsvp-section,
+  .gift-section,
+  .closing-card {
+    max-width: 650px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .gift-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .gift-item {
+    max-width: 280px;
+  }
+}
+/* =====================================================
+   REVISI FOTO MEMPELAI, COUNTDOWN, GALERI & ORNAMEN
+   Tambahan aman: gaya lama tetap dipertahankan.
+   ===================================================== */
+:root { --wedding-gold: #dca43b; --wedding-navy: #0c0f24; }
+
+/* Dua profil, masing-masing dengan foto sendiri */
+.couple-profiles {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+  width: 100%;
+}
+.couple-profile {
+  min-width: 0;
+  padding: 8px 8px 16px;
+  text-align: center;
+}
+.couple-photo-frame {
+  position: relative;
+  width: min(100%, 210px);
+  aspect-ratio: 3 / 4;
+  margin: 0 auto 18px;
+  padding: 5px;
+  border: 1px solid rgba(220,164,59,.72);
+  border-radius: 110px 110px 16px 16px;
+  background: rgba(220,164,59,.09);
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+.couple-photo-frame::after {
+  content: '✦';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--wedding-gold);
+  font-size: 23px;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+.couple-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 105px 105px 12px 12px;
+  background: #1a2047;
+}
+.couple-profile .name.gold { margin-top: 15px; }
+.couple-profile .desc { overflow-wrap: anywhere; }
+.couple-divider {
+  color: var(--wedding-gold);
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  align-self: center;
+}
+
+/* Foto pasangan ditempatkan di atas countdown */
+.countdown-couple-photo {
+  width: min(100%, 330px);
+  aspect-ratio: 4 / 3;
+  margin: 0 auto 24px;
+  padding: 5px;
+  border: 1px solid rgba(220,164,59,.75);
+  border-radius: 150px 150px 14px 14px;
+  background: rgba(220,164,59,.08);
+  box-shadow: 0 12px 26px rgba(0,0,0,.25);
+}
+.countdown-couple-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 145px 145px 10px 10px;
+}
+
+/* Galeri tepat 6 foto: 2 kolom HP, 3 kolom layar besar */
+.gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gallery-item { min-width: 0; background: #1a2047; }
+.gallery-item img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Ornamen sederhana tanpa library atau JavaScript tambahan */
+.ornament-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 4px auto 18px;
+  color: var(--wedding-gold);
+  font-size: 20px;
+}
+.ornament-heading::before,
+.ornament-heading::after {
+  content: '';
+  display: block;
+  width: 48px;
+  max-width: 20vw;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--wedding-gold));
+}
+.ornament-heading::after { transform: rotate(180deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .couple-photo-frame, .countdown-couple-photo, .gallery-item {
+    animation: weddingFadeIn .65s ease-out both;
+  }
+  @keyframes weddingFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .couple-photo-frame, .countdown-couple-photo, .gallery-item { animation: none !important; }
+}
+@media (min-width: 769px) {
+  .couple-profiles {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+  }
+  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 360px) {
+  .countdown { gap: 5px; }
+  .countdown div { min-width: 0; width: 48px; padding: 8px 5px; }
+  .countdown span { font-size: 1.15rem; }
+}

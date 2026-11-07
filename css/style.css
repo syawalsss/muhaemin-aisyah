@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0c0f24;
+  color: #fff;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 45vh;
+  background-image: url('../assets/bg2.jpg');
+  background-size: cover;
+  background-position: center 25%;
+  position: relative;
+  box-shadow: inset 0 -20px 20px #0c0f24;
+}
+
+.image-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to top, #0c0f24, transparent);
+}
+
+.overlay {
+  background-color: #0c0f24;
+  padding: 30px 20px 50px 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 4px double #dca43b;
+  position: relative;
+}
+
+.cultural-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.cultural-badge .badge-text {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #dca43b;
+  font-weight: 500;
+}
+
+.cultural-badge .diamond {
+  width: 6px;
+  height: 6px;
+  background-color: #dca43b;
+  transform: rotate(45deg);
+}
+
+.gold-text {
+  font-family: 'Great Vibes', cursive;
+  color: #dca43b;
+  font-size: 3.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+.save-the-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 5px 0;
+  color: #e0e0e0;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.date-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 2px 0;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.location-text {
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  color: #a0a4c2;
+  letter-spacing: 0.5px;
+}
+
+.line-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #dca43b, transparent);
+  margin: 5px 0;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #fff;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.and-symbol {
+  font-family: 'Great Vibes', cursive;
+  color: #dca43b;
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.invitation-box {
+  width: 100%;
+  max-width: 320px;
+  margin: 25px 0;
+}
+
+.to {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  color: #a0a4c2;
+}
+
+.guest-name-box {
+  background-color: #ffffff;
+  color: #0c0f24;
+  padding: 15px 20px;
+  border-radius: 8px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 2px solid #dca43b;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.apology {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #707597;
+  line-height: 1.4;
+}
+
+#openBtn {
+  background: linear-gradient(135deg, #dca43b, #b88729);
+  color: #0c0f24;
+  border: none;
+  padding: 12px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(220, 164, 59, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#openBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 164, 59, 0.5);
+}
+
+#soundToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dca43b;
+  color: #0c0f24;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+@media screen and (min-width: 769px) {
+  .hero {
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .image-wrapper {
+    width: 55%;
+    height: 100vh;
+    background-position: center 35%;
+    box-shadow: inset -20px 0 20px #0c0f24;
+  }
+  
+  .image-wrapper::after {
+    background: linear-gradient(to right, transparent, #0c0f24);
+    width: 40px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    left: auto;
+  }
+  
+  .overlay {
+    width: 45%;
+    padding: 40px;
+    justify-content: center;
+    border-top: none;
+    border-left: 4px double #dca43b;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .gold-text {
+    font-size: 4rem;
+  }
+}

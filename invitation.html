@@ -1,0 +1,648 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c0f24" />
+  <title>Undangan Pernikahan - Eming & Icha</title>
+  <link rel="stylesheet" href="./css/invitation.css" />
+
+  <!-- Tambahan styling khusus, tanpa mengubah CSS lama -->
+  <style>
+    /* Ornamen ringan */
+    .wedding-decoration {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: #dca43b;
+      margin: 12px auto 24px;
+    }
+
+    .wedding-decoration::before,
+    .wedding-decoration::after {
+      content: "";
+      width: 55px;
+      height: 1px;
+      background: linear-gradient(
+        90deg, transparent, #dca43b
+      );
+    }
+
+    .wedding-decoration::after {
+      transform: rotate(180deg);
+    }
+
+    .wedding-decoration span {
+      font-size: 21px;
+    }
+
+    /* Dua foto mempelai */
+    .profiles-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-card {
+      width: 100%;
+      max-width: 290px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .individual-photo-frame {
+      width: min(72%, 210px);
+      aspect-ratio: 3 / 4;
+      margin: 0 auto 20px;
+      padding: 5px;
+      border: 1px solid rgba(220, 164, 59, 0.8);
+      border-radius: 110px 110px 15px 15px;
+      background: rgba(220, 164, 59, 0.07);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .individual-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 105px 105px 11px 11px;
+    }
+
+    .profile-card .name.gold {
+      margin-bottom: 12px;
+    }
+
+    .profile-card .instagram-tag {
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    /* Foto pasangan di atas countdown */
+    .countdown-photo-frame {
+      width: min(100%, 310px);
+      aspect-ratio: 4 / 5;
+      margin: 0 auto 25px;
+      padding: 5px;
+      border: 1px solid #dca43b;
+      border-radius: 160px 160px 18px 18px;
+      background: rgba(220, 164, 59, 0.08);
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .countdown-couple-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 155px 155px 13px 13px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .countdown-caption {
+      font-family: "Great Vibes", cursive;
+      font-size: 2rem;
+      color: #dca43b;
+      margin: 0 0 22px;
+    }
+
+    /* Galeri 6 foto */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(220, 164, 59, 0.35);
+      background: #171b37;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    @media (hover: hover) {
+      .gallery-item:hover img {
+        transform: scale(1.035);
+      }
+    }
+
+    /* Animasi sederhana */
+    @keyframes weddingFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .individual-photo-frame,
+    .countdown-photo-frame {
+      animation: weddingFadeIn 0.7s ease-out both;
+    }
+
+    /* Tampilan desktop */
+    @media (min-width: 769px) {
+      .profiles-wrapper {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .profile-card {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .individual-photo-frame {
+        width: min(88%, 220px);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+    }
+
+    /* Hemat animasi untuk perangkat yang membatasi gerakan */
+    @media (prefers-reduced-motion: reduce) {
+      .individual-photo-frame,
+      .countdown-photo-frame {
+        animation: none;
+      }
+
+      .gallery-item img {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-initials">Eming & Icha</div>
+      <div class="preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- UNDANGAN UTAMA -->
+  <div class="main-invitation">
+    <div class="text-box">
+      <div class="cultural-ornament">
+        <span class="diamond-dot"></span>
+        <span class="diamond-dot large"></span>
+        <span class="diamond-dot"></span>
+      </div>
+
+      <p class="greeting">
+        Assalamualaikum Warohmatullahi Wabarakatuh
+      </p>
+
+      <p class="invitation-text">
+        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
+        mengundang Bapak/Ibu/Saudara/i pada acara resepsi
+        pernikahan kami:
+      </p>
+
+      <div class="wedding-title">
+        <div
+          class="groom-name anim-pop"
+          style="animation-delay: 0.8s"
+        >
+          Muhaemin
+        </div>
+
+        <div
+          class="and-symbol anim-pop"
+          style="animation-delay: 1s"
+        >
+          &amp;
+        </div>
+
+        <div
+          class="bride-name anim-pop"
+          style="animation-delay: 1.2s"
+        >
+          St Aisyah
+        </div>
+      </div>
+
+      <div class="line-separator"></div>
+
+      <p class="quote">
+        Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia
+        menciptakan pasangan-pasangan untukmu dari jenismu sendiri,
+        agar kamu cenderung dan merasa tenteram kepadanya, dan
+        Dia menjadikan di antaramu rasa kasih dan sayang.
+        Sungguh, pada yang demikian itu benar-benar terdapat
+        tanda-tanda bagi kaum yang berpikir.
+      </p>
+
+      <p class="surah">(Ar-Rum : 21)</p>
+    </div>
+
+    <!-- PROFIL MEMPELAI -->
+    <div class="invitation-section">
+
+      <div class="wedding-decoration" aria-hidden="true">
+        <span>✦</span>
+      </div>
+
+      <div class="profiles-wrapper">
+
+        <!-- MEMPELAI PRIA -->
+        <div class="profile-card">
+          <div class="individual-photo-frame">
+            <img
+              src="./assets/eming.PNG"
+              alt="Foto mempelai pria Muhaemin"
+              class="individual-photo"
+              width="210"
+              height="280"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <h2 class="name gold">Eming</h2>
+
+          <p class="desc">
+            Anak ke-2 dari<br />
+            Bapak Iskandar Mansur<br />
+            &amp; Ibu Sitti Samsiah Pahara
+          </p>
+
+          <div class="instagram-tag">
+            @muhaimin_iskandar15
+          </div>
+        </div>
+
+        <div class="cultural-center-icon" aria-hidden="true">
+          ✦
+        </div>
+
+        <!-- MEMPELAI WANITA -->
+        <div class="profile-card">
+          <div class="individual-photo-frame">
+            <img
+              src="./assets/icha.PNG"
+              alt="Foto mempelai wanita St Aisyah"
+              class="individual-photo"
+              width="210"
+              height="280"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <h2 class="name gold">Icha</h2>
+
+          <p class="desc">
+            Anak ke-3 dari<br />
+            Bapak H. Muh Sahib, HB<br />
+            &amp; Ibu Hasnia HP
+          </p>
+
+          <div class="instagram-tag">
+            @aisyahhs15
+          </div>
+        </div>
+
+      </div>
+
+      <div class="wedding-decoration" aria-hidden="true">
+        <span>✧</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFORMASI ACARA -->
+  <div class="events-container">
+
+    <!-- AKAD NIKAH -->
+    <div class="section-card">
+      <h2 class="heading-event">Akad Nikah</h2>
+
+      <p class="event-detail">
+        <strong>Sabtu, 14 November 2026</strong><br />
+        Pukul 10.00 WITA - Selesai<br />
+
+        <span class="location-badge">
+          Kediaman Mempelai Wanita
+        </span><br />
+
+        Jl. KH. Ahmad Dahlan,<br />
+        Kel. Bonto Perak, Kec. Pangkajene,<br />
+        Kab. Pangkep
+      </p>
+    </div>
+
+    <!-- RESEPSI -->
+    <div class="section-card">
+      <h2 class="heading-event">Resepsi</h2>
+
+      <p class="event-detail">
+        <strong>Minggu, 15 November 2026</strong><br />
+        Pukul 10.00 WITA - Selesai<br />
+
+        <span class="location-badge">
+          Kediaman Mempelai Pria
+        </span><br />
+
+        Jl. Sultan Hasanuddin,<br />
+        Poros Pangkep - Makassar<br />
+        (Depan Masjid Besar Nurul Huda,<br />
+        Baru-Baru Utara)
+      </p>
+
+      <a
+        class="calendar-button"
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Pernikahan+Eming+%26+Icha&amp;dates=20261115%2F20261116&amp;details=Resepsi+pernikahan+Eming+%26+Icha%2C+Minggu+15+November+2026+pukul+10.00+WITA+-+selesai&amp;location=Jl.+Sultan+Hasanuddin%2C+Poros+Pangkep+-+Makassar+%28Depan+Masjid+Besar+Nurul+Huda%2C+Baru-Baru+Utara%29"
+        target="_blank"
+      >
+        Simpan Tanggal ke Kalender
+      </a>
+    </div>
+
+    <!-- MENUJU HARI BAHAGIA -->
+    <div class="section-card">
+      <h2 class="heading-event">Menuju Hari Bahagia</h2>
+
+      <div class="wedding-decoration" aria-hidden="true">
+        <span>✦</span>
+      </div>
+
+      <!-- FOTO PASANGAN -->
+      <div class="countdown-photo-frame">
+        <img
+          src="./assets/bg2.jpg"
+          alt="Foto pasangan Eming dan Icha"
+          class="countdown-couple-photo"
+          width="310"
+          height="388"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      <p class="countdown-caption">
+        Forever Starts Here
+      </p>
+
+      <div class="countdown">
+        <div>
+          <span id="days">00</span>
+          <small>Hari</small>
+        </div>
+
+        <div>
+          <span id="hours">00</span>
+          <small>Jam</small>
+        </div>
+
+        <div>
+          <span id="minutes">00</span>
+          <small>Menit</small>
+        </div>
+
+        <div>
+          <span id="seconds">00</span>
+          <small>Detik</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOKASI ACARA -->
+    <div class="section-card">
+      <h2 class="heading-event">Lokasi Acara</h2>
+
+      <iframe
+        class="map"
+        src="https://maps.google.com/maps?q=Jl.%20Sultan%20Hasanuddin%20Baru-Baru%20Utara%20Pangkep&amp;z=15&amp;output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        title="Lokasi Resepsi Eming dan Icha"
+      ></iframe>
+
+      <a
+        class="map-button"
+        href="https://goo.gl/maps/dSNfMCjtQm6Ys76V7?g_st=aw"
+        target="_blank"
+      >
+        Buka Google Maps
+      </a>
+
+      <button
+        class="copy-address-button"
+        onclick="
+          navigator.clipboard
+            .writeText(
+              'Jl. Sultan Hasanuddin, Poros Pangkep - Makassar (Depan Masjid Besar Nurul Huda, Baru-Baru Utara)'
+            )
+            .then(() => alert('Alamat lengkap berhasil disalin!'))
+        "
+      >
+        Salin Alamat Lengkap
+      </button>
+    </div>
+
+    <!-- OUR MOMENT -->
+    <div class="moment-section">
+      <h2 class="heading-event">Our Moment</h2>
+
+      <div class="wedding-decoration" aria-hidden="true">
+        <span>✧</span>
+      </div>
+
+      <!-- GALERI 6 FOTO -->
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal1.PNG"
+            alt="Galeri Eming dan Icha 1"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal2.PNG"
+            alt="Galeri Eming dan Icha 2"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal3.PNG"
+            alt="Galeri Eming dan Icha 3"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal4.PNG"
+            alt="Galeri Eming dan Icha 4"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal5.PNG"
+            alt="Galeri Eming dan Icha 5"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="./assets/gal6.PNG"
+            alt="Galeri Eming dan Icha 6"
+            width="300"
+            height="400"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- UCAPAN DAN DOA -->
+    <div class="rsvp-section">
+      <h2 class="heading-event">Ucapan &amp; Doa Restu</h2>
+
+      <form id="rsvpForm">
+        <input
+          type="text"
+          id="name"
+          placeholder="Nama Anda"
+          required
+        />
+
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Tulis ucapan dan doa restu Anda..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Kirim Ucapan via WhatsApp
+        </button>
+      </form>
+    </div>
+
+    <!-- WEDDING GIFT -->
+    <div class="gift-section">
+      <h2 class="heading-event">Wedding Gift</h2>
+
+      <div class="gift-list">
+        <div class="gift-item">
+
+          <img
+            src="./assets/seabank.png"
+            alt="Logo bank"
+            class="bank-logo"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <div class="bank-info">
+            <p class="bank-name">
+              BRI a/n Muhaemin
+            </p>
+
+            <p class="account-number" id="rek1">
+              501601034245531
+            </p>
+
+            <button onclick="copyRekening('rek1')">
+              Salin Nomor Rekening
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- PENUTUP -->
+    <div class="closing-card">
+      <p>
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami
+        apabila Bapak/Ibu/Saudara/i berkenan hadir untuk
+        memberikan doa restu bagi kedua mempelai.
+      </p>
+
+      <p>
+        Atas kehadiran dan doa restunya,
+        kami ucapkan terima kasih.
+      </p>
+
+      <div class="closing-names">
+        Eming &amp; Icha
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>
+        Made with ♥ by <span>UndanganMU</span>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- BACKGROUND MUSIC -->
+  <audio id="bgMusic" loop preload="none">
+    <source src="./assets/audio.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button
+    id="soundToggle"
+    type="button"
+    aria-label="Hidupkan atau matikan musik"
+  >🔊</button>
+
+  <!-- JAVASCRIPT LAMA TETAP -->
+  <script src="./Index.js"></script>
+</body>
+</html>

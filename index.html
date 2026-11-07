@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Muhaemin & Aisyah</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <div class="image-wrapper"></div>
+        <div class="overlay">
+          <div class="cultural-badge">
+            <span class="diamond"></span>
+            <span class="badge-text">Walimatul 'Ursy</span>
+            <span class="diamond"></span>
+          </div>
+          
+          <h2 class="subtitle gold-text">Undangan</h2>
+          <h3 class="save-the-date">Save the Date</h3>
+          <p class="date-text">Ahad, 15 November 2026</p>
+          <p class="location-text">Jl. Sultan Hasanuddin, Poros Pangkep - Makassar
+          (Depan Masjid Besar Nurul Huda Baru-Baru Utara)</p>
+          
+          <div class="line-divider"></div>
+          <h1 class="title">Muhaemin <span class="and-symbol">&</span> Aisyah</h1>
+          <div class="line-divider"></div>
+          
+          <div class="invitation-box">
+             <button id="openBtn">Buka Undangan</button>
+            <p class="to">Kepada Yth. Bapak/Ibu/Saudara(i):</p>
+            <div class="guest-name-box">
+              <p class="name" id="guestName">Tamu Undangan</p>
+            </div>
+            <p class="apology">Mohon maaf bila ada kesalahan penulisan nama/alamat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="soundToggle">🔊</button>
+    
+    <script src="./Index.js"></script>
+    <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      const namaTamu = getQueryParam("to");
+      const elemenNama = document.getElementById("guestName");
+      
+      if (namaTamu) {
+        const namaFormatted = decodeURIComponent(namaTamu.replace(/\+/g, " "));
+        elemenNama.textContent = namaFormatted;
+      } else {
+        elemenNama.textContent = "Tamu Undangan";
+      }
+    </script>
+  </body>
+</html>
